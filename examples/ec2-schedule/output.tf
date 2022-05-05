@@ -20,3 +20,11 @@ output "lambda_start_name" {
 output "lambda_start_arn" {
   value = module.infra-start-daily.scheduler_lambda_arn
 }
+
+output "lambda_terminate_name" {
+  value = module.infra-terminate-daily.scheduler_lambda_name
+}
+
+output "lambda_terminate_arn" {
+  value = module.infra-terminate-daily.scheduler_lambda_arn
+}

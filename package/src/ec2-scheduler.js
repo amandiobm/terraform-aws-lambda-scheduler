@@ -63,7 +63,7 @@ class Ec2Scheduler {
   }
 
   /**
-   * Stop RDS instance by identifier
+   * Stop EC2 instance by identifier
    *
    * @param instanceIdentifier
    * @returns {Promise<*>}
@@ -77,7 +77,7 @@ class Ec2Scheduler {
   }
 
   /**
-   * Start RDS instance by identifier
+   * Start EC2 instance by identifier
    *
    * @param instanceIdentifier
    * @returns {Promise<*>}
@@ -88,6 +88,20 @@ class Ec2Scheduler {
       //DryRun: true
     };
     return await this.ec2.startInstances(params).promise();
+  }
+
+  /**
+   * Terminate EC2 instance by identifier
+   *
+   * @param instanceIdentifier
+   * @returns {Promise<*>}
+   */
+  async terminate(instanceIdentifier) {
+    let params = {
+      InstanceIds: [instanceIdentifier],
+      //DryRun: true
+    };
+    return await this.ec2.terminateInstances(params).promise();
   }
 }
 

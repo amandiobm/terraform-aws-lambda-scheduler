@@ -160,3 +160,28 @@ module "infra-start-daily" {
       Value = "test"
     }]
 }
+
+module "infra-terminate-daily" {
+  source                         = "../../"
+  name                           = "terminate-ec2-bastion"
+  aws_regions                    = ["eu-central-1"]
+
+  cloudwatch_schedule_expression = "cron(0 07 ? * MON-SUN *)" # UTC
+  schedule_action                = "terminate"
+
+  spot_schedule                  = false
+  ec2_schedule                   = true
+  rds_schedule                   = false
+  autoscaling_schedule           = false
+  cloudwatch_alarm_schedule      = false
+
+  resource_tags = [
+    {
+      Key = "ToStop"
+      Value = "true"
+    },
+    {
+      Key = "Environment"
+      Value = "test"
+    }]
+}

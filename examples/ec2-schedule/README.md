@@ -1,6 +1,6 @@
 # Scheduled EC2 Instance
 
-This example demonstrates how to create a scheduled EC2 host that can be stop/start by schedule.
+This example demonstrates how to create a scheduled EC2 host that can be stop/start/terminate by schedule.
 
 > NOTE: You should create/use a profile name in your `~/.aws/credentials`. 
 > For example:
