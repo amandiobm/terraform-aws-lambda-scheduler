@@ -1,6 +1,6 @@
 {
   "name": "aws-lambda-scheduler",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "AWS Lambda Scheduler help to start and stop infrastructure by schedule",
   "main": "src/index.js",
   "dependencies": {},
